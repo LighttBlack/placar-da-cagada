@@ -1,0 +1,187 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha no topo */
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px; /* Espaçamento geral */
+    box-sizing: border-box; /* Inclui padding na largura total */
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Largura máxima para telas maiores */
+    text-align: center;
+}
+
+h1, h2 {
+    color: #4CAF50; /* Um tom de verde */
+    margin-bottom: 20px;
+}
+
+.add-player-section, .player-actions {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column; /* Itens em coluna no celular */
+    gap: 10px; /* Espaçamento entre itens */
+}
+
+/* Ajuste para alinhar os elementos da seção de adicionar/remover jogador */
+.add-player-section {
+    align-items: center; /* Centraliza itens verticalmente */
+}
+
+input[type="text"], select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Botões com largura total no celular */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button.remove-btn { /* Estilo para remover ponto */
+    background-color: #f44336; /* Vermelho */
+}
+
+button.remove-btn:hover {
+    background-color: #da190b;
+}
+
+button.remove-player-btn { /* NOVO: Estilo para remover competidor */
+    background-color: #ff9800; /* Laranja */
+    margin-top: 5px; /* Pequeno espaçamento do select acima */
+}
+
+button.remove-player-btn:hover {
+    background-color: #e68900;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #eee;
+    margin: 30px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #555;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilos para o histórico */
+.history-log-container {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: left; /* Alinha o texto do histórico à esquerda */
+    max-height: 300px; /* Limita a altura do histórico */
+    overflow-y: auto; /* Adiciona scroll se o conteúdo for muito grande */
+}
+
+.history-log-container h2 {
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+#historyList {
+    list-style: none; /* Remove os marcadores de lista padrão */
+    padding: 0;
+    margin: 0;
+}
+
+#historyList li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #e0e0e0; /* Linha tracejada entre os itens */
+    font-size: 0.95em;
+    color: #666;
+}
+
+#historyList li:last-child {
+    border-bottom: none; /* Remove a linha do último item */
+}
+
+
+/* Estilos específicos para telas menores (celulares) */
+@media (min-width: 600px) {
+    .add-player-section {
+        flex-direction: row; /* Itens em linha em telas maiores */
+        flex-wrap: wrap; /* Permite que os itens quebrem linha */
+        justify-content: center;
+        gap: 10px; /* Espaçamento entre os itens */
+    }
+    .add-player-section input,
+    .add-player-section select,
+    .add-player-section button {
+        width: auto; /* Deixa os elementos ocuparem seu tamanho natural */
+        flex-grow: 1; /* Permite que cresçam para preencher espaço */
+    }
+    /* Ajuste para que o input e o select de remover ocupem bem o espaço antes do botão */
+    .add-player-section input#newPlayerName { order: 1; }
+    .add-player-section button#addPlayerBtn { order: 2; margin-left: 10px;}
+    .add-player-section select#playerToRemoveSelect { order: 3; margin-top: 0; margin-left: 0; }
+    .add-player-section button#removePlayerBtn { order: 4; margin-left: 10px; margin-top: 0;}
+
+    .player-actions {
+        flex-direction: row; /* Itens em linha em telas maiores */
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap; /* Permite que os itens quebrem linha se não houver espaço */
+    }
+
+    .player-actions select,
+    .player-actions p {
+        flex-grow: 1; /* Faz os campos e parágrafo ocuparem mais espaço */
+    }
+
+    .player-actions button {
+        width: auto; /* Volta para largura automática em telas maiores */
+        margin-left: 10px;
+    }
+    .player-actions p {
+        margin-right: 10px; /* Espaço entre o texto e o select */
+        flex-grow: 0; /* Não cresce para ocupar espaço desnecessário */
+    }
+}

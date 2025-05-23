@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placar de Idas ao Banheiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cagada league</h1>
+
+        <div class="add-player-section">
+            <input type="text" id="newPlayerName" placeholder="Nome do novo competidor">
+            <button id="addPlayerBtn">Adicionar Competidor</button>
+            <select id="playerToRemoveSelect"> </select>
+            <button id="removePlayerBtn" class="remove-player-btn">Remover Competidor</button> </div>
+
+        <div class="player-actions">
+            <p>Quem acabou de pontuar?</p>
+            <select id="playerSelect">
+                </select>
+            <button id="addPointBtn">Adicionar Ponto</button>
+            <button id="removePointBtn" class="remove-btn">Remover Ponto</button>
+        </div>
+
+        <hr> <h2>Placar Atual</h2>
+        <table id="scoreTable">
+            <thead>
+                <tr>
+                    <th>Competidor</th>
+                    <th>Pontos</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+
+        <hr> <h2>Histórico de cagada</h2>
+        <div class="history-log-container">
+            <ul id="historyList">
+                </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
